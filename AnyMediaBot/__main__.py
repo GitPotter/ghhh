@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup
 
 
 
-START_IMG = (
+START_GIF = (
     "https://telegra.ph/file/cf1e3d0a5063ee3110357.mp4",
     "https://telegra.ph/file/cf1e3d0a5063ee3110357.mp4",
 )
@@ -41,7 +41,7 @@ async def start(bot, update):
 🙋‍♂️ I am **[Eilink Media Bot](t.me/EilinkMediaNTBOT)**
 """
     await update.reply_photo(
-                    photo=(random.choice(START_IMG)),
+                    photo=(random.choice(START_GIF)),
                     reply_markup=START_BTN,
                     caption=START_TEXT,
                     parse_mode="Html")
