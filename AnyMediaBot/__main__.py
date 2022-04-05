@@ -24,11 +24,11 @@ START_BTN = InlineKeyboardMarkup(
                     InlineKeyboardButton("🌺 Help 🌺", callback_data="helpmenu"),
                 ],
                 [
-                    InlineKeyboardButton("☘️ Updates ☘️", url="https://t.me/"),
-                    InlineKeyboardButton("🌷 Support 🌷", url="https://t.me/")
+                    InlineKeyboardButton("☘️ Updates ☘️", url="https://t.me/NBOT_TEAM"),
+                    InlineKeyboardButton("🌷 Support 🌷", url="https://t.me/TEAM_NBOT_GROUOP")
                 ],
                 [
-                    InlineKeyboardButton("➕ Add me to your group ➕", url="http://t.me/anymediabot?startgroup=botstart") 
+                    InlineKeyboardButton("➕ Add me to your group ➕", url="http://t.me/EilinkMediaNTBOT?startgroup=botstart") 
                 ],
 
             ]
@@ -38,7 +38,7 @@ START_BTN = InlineKeyboardMarkup(
 async def start(bot, update):
     START_TEXT = f"""
 👋 Hello {update.from_user.mention} , 🤗
-🙋‍♂️ I am 
+🙋‍♂️ I am **[Eilink Media Bot](t.me/EilinkMediaNTBOT)**
 """
     await update.reply_photo(
                     photo=(random.choice(START_IMG)),
@@ -55,7 +55,7 @@ async def help(bot, update):
         reply_markup=HELP_BTN)
 
 HELP_TEXT = f"""
-🙋‍♂️ I am <b>☘️ Any Media Bot ☘️ </b>
+🙋‍♂️ I am <b>**[Eilink Media Bot](t.me/EilinkMediaNTBOT)** </b>
 🎲 <b>Help Menu</b> 
 """
 HELP_BTN = InlineKeyboardMarkup(
@@ -78,7 +78,7 @@ ABOUT_BTN = InlineKeyboardMarkup(
         )
 ST_TEXT = f"""
 👋 Hello
-🙋‍♂️ I am <b>☘️ Any Media Bot ☘️ </b>
+🙋‍♂️ I am <b> **[Eilink Media Bot](t.me/EilinkMediaNTBOT)**</b>
 """
 @bot.on_callback_query(filters.regex("startmenu"))
 async def startmenu(_, query: CallbackQuery):
@@ -107,7 +107,8 @@ async def make_carbon(code):
     return image
 
 TEXT=f"""
-☘️ **carbon Created Successfully** ☘️
+☘️ **carbon Created Successfully** 
+🔥 **Created by** : @EilinkMediaNTBOT ☘️
 """
 
 
@@ -131,7 +132,7 @@ async def make_logo(_, message):
     imgcaption = f"""
 ☘️**write Successfully**
 ◇───────────────◇
-🔥 **Created by** : @AnyMediaBot
+🔥 **Created by** : @EilinkMediaNTBOT
 🌷 **Requestor** : {message.from_user.mention}
 ⚡️ **Powered By **  : SNT™ 🇱🇰
 ◇───────────────◇
