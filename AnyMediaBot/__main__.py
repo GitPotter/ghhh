@@ -110,7 +110,9 @@ async def make_carbon(code):
 
 TEXT=f"""
 ☘️ **carbon Created Successfully** 
+◇───────────────◇
 🔥 **Created by** : @EilinkMediaNTBOT ☘️
+◇───────────────◇
 """
 
 
@@ -136,14 +138,14 @@ async def make_logo(_, message):
 ◇───────────────◇
 🔥 **Created by** : @EilinkMediaNTBOT
 🌷 **Requestor** : {message.from_user.mention}
-⚡️ **Powered By **  : SNT™ 🇱🇰
+⚡️ **Powered By **  : [ηвσт тєαм 🇱🇰](https://t.me/NBOT_TEAM)
 ◇───────────────◇
 """
     if len(message.command) < 2:
             return await message.reply_text("Please give a text to write ✍️")
     m = await message.reply_text("✍️ writeing ..")
     text = message.text.split(None, 1)[1]
-    photo = get(f"https://api.single-developers.software?write={text}").history[1].url
+    photo = get(f"http://single-developers.up.railway.app?write={text}").history[1].url
     await m.edit("📤 Uploading ...")
     await message.reply_photo(photo = photo,
                               caption=imgcaption,)
