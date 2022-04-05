@@ -12,13 +12,13 @@ from pyrogram.types import Message, InlineKeyboardMarkup
 
 
 START_IMG = (
-    "http://telegra.ph/file/07e1a366ec541ae21bc91.jpg",
-    "http://telegra.ph/file/07e1a366ec541ae21bc91.jpg",
+    "https://telegra.ph/file/cf1e3d0a5063ee3110357.mp4",
+    "https://telegra.ph/file/cf1e3d0a5063ee3110357.mp4",
 )
 START_BTN = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💁‍♀️ About 💁‍♀️", callback_data="aboutmenu"),
+                    InlineKeyboardButton(" About", callback_data="aboutmenu"),
                 ],
                 [
                     InlineKeyboardButton("🌺 Help 🌺", callback_data="helpmenu"),
@@ -55,7 +55,7 @@ async def help(bot, update):
         reply_markup=HELP_BTN)
 
 HELP_TEXT = f"""
-🙋‍♂️ I am <b>**[Eilink Media Bot](t.me/EilinkMediaNTBOT)** </b>
+🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
 🎲 <b>Help Menu</b> 
 """
 HELP_BTN = InlineKeyboardMarkup(
@@ -67,7 +67,9 @@ HELP_BTN = InlineKeyboardMarkup(
         )
 ABOUT_TEXT = """
 👋 Hello
-🙋‍♂️ I am <b>☘️ Any Media Bot ☘️ </b>
+🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
+
+
 """
 ABOUT_BTN = InlineKeyboardMarkup(
             [
@@ -78,7 +80,7 @@ ABOUT_BTN = InlineKeyboardMarkup(
         )
 ST_TEXT = f"""
 👋 Hello
-🙋‍♂️ I am <b> **[Eilink Media Bot](t.me/EilinkMediaNTBOT)**</b>
+🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
 """
 @bot.on_callback_query(filters.regex("startmenu"))
 async def startmenu(_, query: CallbackQuery):
