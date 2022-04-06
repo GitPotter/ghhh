@@ -37,10 +37,10 @@ START_BTN = InlineKeyboardMarkup(
 @bot.on_message(filters.command("start"))
 async def start(bot, update):
     START_TEXT = f"""
-👋 Hello {update.from_user.mention} , 🤗
+<b>👋 Hello {update.from_user.mention} , 🤗
 🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
 
-send /help command and check my all commands 🎊🎊
+send /help command and check my all commands 🎊🎊</b>
 """
     await update.reply_photo(
                     photo=(random.choice(START_GIF)),
@@ -57,9 +57,9 @@ async def help(bot, update):
         reply_markup=HELP_BTN)
 
 HELP_TEXT = f"""
-🎲 <b>Help Menu</b>
+<b>🎲 Help Menu</b>
 
-My All Commands ⇩
+My All Commands ⇩ </b>
  ⨙●  /write  - write text  in page 😍
  ⨙●  /logo   - create logo 🧩
  ⨙●  /carbon - make carbon 🎤
@@ -79,9 +79,9 @@ About  [Eilink Media Bot](t.me/EilinkMediaNTBOT),
 
 ✘ Name       : [Eilink Media Bot](t.me/EilinkMediaNTBOT),
 ✘ Create On  : [2022-04-06](t.me/NBOT_TEAM/126)
-✘ Source Code:  🔐 coming soon..
+✘ Source Code:  🔐 
 ✘ Developer  : [ηвσт тєαм 🇱🇰](t.me/NBOT_TEAM)
-
+✘ Thanks For : [noob #AFK](t.me/Noob_ultra_Pro_Max)
 
 Made with ❤️ by [ηвσт тєαм 🇱🇰](t.me/NBOT_TEAM)</b>
 
@@ -95,10 +95,10 @@ ABOUT_BTN = InlineKeyboardMarkup(
             ]
         )
 ST_TEXT = f"""
-👋 Hello
-🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
+<b>👋 Hello
+🙋‍♂️ I am [Eilink Media Bot](t.me/EilinkMediaNTBOT)
 
-send /help command and check my all commands 🎊🎊
+send /help command and check my all commands 🎊🎊</b>
 """
 @bot.on_callback_query(filters.regex("startmenu"))
 async def startmenu(_, query: CallbackQuery):
