@@ -152,8 +152,7 @@ async def make_logo(_, message):
     await m.delete()
 
        
-
- @bot.on_message(filters.command("logo"))
+@bot.on_message(filters.command("logo"))
 async def make_logo(_, message):
     imgcaption = f"""
 ☘️**LOGO Create Successfully**
