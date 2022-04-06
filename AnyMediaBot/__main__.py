@@ -12,7 +12,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup
 
 
 START_GIF = (
-    "https://telegra.ph/file/cf1e3d0a5063ee3110357.mp4",
+    "https://telegra.ph/file/a9a433ae66ae0e71da1f3.jpg",
     "https://telegra.ph/file/cf1e3d0a5063ee3110357.mp4",
 )
 START_BTN = InlineKeyboardMarkup(
@@ -151,6 +151,26 @@ async def make_logo(_, message):
                               caption=imgcaption,)
     await m.delete()
 
+       
 
+ @bot.on_message(filters.command("logo"))
+async def make_logo(_, message):
+    imgcaption = f"""
+☘️**LOGO Create Successfully**
+◇───────────────◇
+🔥 **Created by** : @EilinkMediaNTBOT
+🌷 **Requestor** : {message.from_user.mention}
+⚡️ **Powered By **  : [ηвσт тєαм 🇱🇰](https://t.me/NBOT_TEAM)
+◇───────────────◇
+"""
+    if len(message.command) < 2:
+            return await message.reply_text("Please provide a name... 📸")
+    m = await message.reply_text(" ⭐ making Logo ...")
+    text = message.text.split(None, 1)[1]
+    photo = get(f"http://single-developers.up.railway.app?logo={text}").history[1].url
+    await m.edit("📤 Uploading ...")
+    await message.reply_photo(photo = photo,
+                              caption=imgcaption,)
+    await m.delete() 
 
 bot.run()
