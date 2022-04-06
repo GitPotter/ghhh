@@ -38,7 +38,8 @@ START_BTN = InlineKeyboardMarkup(
 async def start(bot, update):
     START_TEXT = f"""
 👋 Hello {update.from_user.mention} , 🤗
-🙋‍♂️ I am **[Eilink Media Bot](t.me/EilinkMediaNTBOT)**
+🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
+
 """
     await update.reply_photo(
                     photo=(random.choice(START_GIF)),
@@ -55,8 +56,13 @@ async def help(bot, update):
         reply_markup=HELP_BTN)
 
 HELP_TEXT = f"""
-🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
-🎲 <b>Help Menu</b> 
+🎲 <b>Help Menu</b>
+
+My All Commands ⇩
+ ⨙●  /write  - write text  in page 😍
+ ⨙●  /logo   - create logo 🧩
+ ⨙●  /carbon - make carbon 🎤
+ ⨙●  /help   - This Command 😅
 """
 HELP_BTN = InlineKeyboardMarkup(
             [
