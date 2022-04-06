@@ -18,7 +18,7 @@ START_GIF = (
 START_BTN = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(" About", callback_data="aboutmenu"),
+                    InlineKeyboardButton("✨About✨", callback_data="aboutmenu"),
                 ],
                 [
                     InlineKeyboardButton("🌺 Help 🌺", callback_data="helpmenu"),
@@ -40,6 +40,7 @@ async def start(bot, update):
 👋 Hello {update.from_user.mention} , 🤗
 🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
 
+send /help command and check my all commands 🎊🎊
 """
     await update.reply_photo(
                     photo=(random.choice(START_GIF)),
@@ -72,8 +73,17 @@ HELP_BTN = InlineKeyboardMarkup(
             ]
         )
 ABOUT_TEXT = """
-👋 Hello
-🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
+<b>👋 Hello
+
+About  [Eilink Media Bot](t.me/EilinkMediaNTBOT),
+
+✘ Name       : [Eilink Media Bot](t.me/EilinkMediaNTBOT),
+✘ Create On  : [2022-04-06](t.me/NBOT_TEAM/126)
+✘ Source Code:  🔐 coming soon..
+✘ Developer  : [ηвσт тєαм 🇱🇰](t.me/NBOT_TEAM)
+
+
+Made with ❤️ by [ηвσт тєαм 🇱🇰](t.me/NBOT_TEAM)</b>
 
 
 """
@@ -87,6 +97,8 @@ ABOUT_BTN = InlineKeyboardMarkup(
 ST_TEXT = f"""
 👋 Hello
 🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
+
+send /help command and check my all commands 🎊🎊
 """
 @bot.on_callback_query(filters.regex("startmenu"))
 async def startmenu(_, query: CallbackQuery):
@@ -161,7 +173,7 @@ async def make_logo(_, message):
 @bot.on_message(filters.command("logo"))
 async def make_logo(_, message):
     imgcaption = f"""
-☘️**LOGO Create Successfully**
+☘️**Logo Create Successfully**
 ◇───────────────◇
 🔥 **Created by** : @EilinkMediaNTBOT
 🌷 **Requestor** : {message.from_user.mention}
