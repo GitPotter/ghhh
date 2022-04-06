@@ -166,7 +166,7 @@ async def make_logo(_, message):
             return await message.reply_text("Please provide a name... 📸")
     m = await message.reply_text(" ⭐ making Logo ...")
     text = message.text.split(None, 1)[1]
-    photo = get(f"http://single-developers.up.railway.app?logo={text}").history[1].url
+    photo = get(f"http://single-developers.up.railway.app?logo?name={text}").history[1].url
     await m.edit("📤 Uploading ...")
     await message.reply_photo(photo = photo,
                               caption=imgcaption,)
