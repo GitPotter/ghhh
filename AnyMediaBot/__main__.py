@@ -38,7 +38,8 @@ START_BTN = InlineKeyboardMarkup(
 async def start(bot, update):
     START_TEXT = f"""
 <b>👋 Hello {update.from_user.mention} , 🤗
-🙋‍♂️ I am <b>[Eilink Media Bot](t.me/EilinkMediaNTBOT)</b>
+
+🙋‍♂️ I am [Eilink Media Bot](t.me/EilinkMediaNTBOT)
 
 send /help command and check my all commands 🎊🎊</b>
 """
@@ -96,6 +97,7 @@ ABOUT_BTN = InlineKeyboardMarkup(
         )
 ST_TEXT = f"""
 <b>👋 Hello
+
 🙋‍♂️ I am [Eilink Media Bot](t.me/EilinkMediaNTBOT)
 
 send /help command and check my all commands 🎊🎊</b>
@@ -190,4 +192,25 @@ async def make_logo(_, message):
                               caption=imgcaption,)
     await m.delete() 
 
+    
+@bot.on_message(filters.command("hqlogo"))
+async def make_logo(_, message):
+    imgcaption = f"""
+☘️**HQ Logo Create Successfully**
+◇───────────────◇
+🔥 **Created by** : @EilinkMediaNTBOT
+🌷 **Requestor** : {message.from_user.mention}
+⚡️ **Powered By **  : [ηвσт тєαм 🇱🇰](https://t.me/NBOT_TEAM)
+◇───────────────◇
+"""
+    if len(message.command) < 2:
+            return await message.reply_text("Please provide a name... 📸")
+    m = await message.reply_text(" ⭐ making HQ Logo ...")
+    text = message.text.split(None, 1)[1]
+    photo = get(f"http://single-developers.up.railway.app/logohq?name={text}").history[1].url
+    await m.edit("📤 Uploading ...")
+    await message.reply_photo(photo = photo,
+                              caption=imgcaption,)
+    await m.delete() 
+    
 bot.run()
