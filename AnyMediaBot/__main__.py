@@ -150,6 +150,33 @@ async def carbon_func(client, message):
     carbon.close()
 
 
+    
+@sz.on_message(filters.private & filters.command("broadcast") & filters.user(SUDO_USERS) & filters.reply)
+async def _broadcast(_, bot: Message):
+    await broadcast_handler(bot)      
+    
+    
+@sz.on_message(filters.command("stats") & filters.user(SUDO_USERS))
+@ForceSub
+async def show_status_count(_, bot: Message):
+    total, used, free = shutil.disk_usage(".")
+    total = humanbytes(total)
+    used = humanbytes(used)
+    free = humanbytes(free)
+    cpu_usage = psutil.cpu_percent()
+    ram_usage = psutil.virtual_memory().percent
+    disk_usage = psutil.disk_usage('/').percent
+    total_users = await db.total_users_count()
+    await bot.reply_text(
+        text=f"**💽 Tᴏᴛᴇʟ Dɪꜱᴋ Sᴘᴀᴄᴇ:** {total} \n**💿 Uꜱᴇᴅ Sᴘᴀᴄᴇ:** `{used}({disk_usage}%)` \n**📊 Fʀᴇᴇ Sᴘᴀᴄᴇ:** `{free}` \n**Cᴘᴜ Uꜱᴀɢᴇ:** `{cpu_usage}%` \n**Rᴀᴍ Uꜱᴀɢᴇ:** `{ram_usage}%` \n\n**Tᴏᴛᴀʟ Uꜱᴇʀꜱ 👀:** `{total_users}`\n\n**@EilinkMediaNTBOT 🤖**",
+        parse_mode="Markdown",
+        quote=True
+    )       
+    
+    
+    
+    
+    
 
 @bot.on_message(filters.command("write"))
 async def make_logo(_, message):
