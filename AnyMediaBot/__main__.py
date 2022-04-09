@@ -151,12 +151,12 @@ async def carbon_func(client, message):
 
 
     
-@sz.on_message(filters.private & filters.command("broadcast") & filters.user(SUDO_USERS) & filters.reply)
+@AnyMediaBot.on_message(filters.private & filters.command("broadcast") & filters.user(SUDO_USERS) & filters.reply)
 async def _broadcast(_, bot: Message):
     await broadcast_handler(bot)      
     
     
-@sz.on_message(filters.command("stats") & filters.user(SUDO_USERS))
+@AnyMediaBot.on_message(filters.command("stats") & filters.user(SUDO_USERS))
 @ForceSub
 async def show_status_count(_, bot: Message):
     total, used, free = shutil.disk_usage(".")
