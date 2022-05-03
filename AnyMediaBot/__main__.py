@@ -65,6 +65,7 @@ My All Commands ⇩ </b>
  ⨙●  /logo   - create logo 🧩
  ⨙●  /carbon - make carbon 🎤
  ⨙●  /help   - This Command 😅
+ ⨙● /hqlogo - create hq logo 💫
 """
 HELP_BTN = InlineKeyboardMarkup(
             [
@@ -213,5 +214,25 @@ async def make_logo(_, message):
                               caption=imgcaption,)
     await m.delete() 
     
+@bot.on_message(filters.command("ghost"))
+async def make_logo(_, message):
+    imgcaption = f"""
+☘️**Ghost Logo Create Successfully**
+◇───────────────◇
+🔥 **Created by** : @EilinkMediaNTBOT
+🌷 **Requestor** : {message.from_user.mention}
+⚡️ **Powered By **  : [ηвσт тєαм 🇱🇰](https://t.me/NBOT_TEAM)
+◇───────────────◇
+"""
+    if len(message.command) < 2:
+            return await message.reply_text("Please provide a name... 📸")
+    m = await message.reply_text(" ⭐ Making Ghost Logo ...")
+    text = message.text.split(None, 1)[1]
+    photo = get(f"https://sd-apis.up.railway.app/?logo={text}").history[1].url
+    await m.edit("📤 Uploading ...")
+    await message.reply_photo(photo = photo,
+                              caption=imgcaption,)
+    await m.delete() 
+
     
 bot.run()
