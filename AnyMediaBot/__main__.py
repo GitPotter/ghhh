@@ -232,11 +232,7 @@ async def make_logo(_, message):
     await m.edit("📤 Uploading ...")
     await message.reply_photo(photo = photo,
                               caption=imgcaption,)
-    await m.delete() 
-
-
-from pystark import Stark, Message
-from pystark.plugins.helpers import db
+    await m.delete()
 
 
 @bot.on_message(filters.command("broadcast"))
